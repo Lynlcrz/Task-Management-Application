@@ -53,13 +53,6 @@ cd backend
 npm install
 
 # Create a .env file in the backend directory
-# Add the following environment variables:
-# DB_HOST=localhost
-# DB_USER=root
-# DB_PASSWORD=
-# DB_NAME=task_management
-# PORT=5000
-# NODE_ENV=development
 
 # Start XAMPP (if not already running)
 # Windows: Run XAMPP Control Panel and click Start for Apache and MySQL
