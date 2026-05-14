@@ -64,11 +64,9 @@ npm install
 
 # Start the backend server
 npm run dev
-# or
-npm start
 ```
 
-The backend will be available at `http://localhost:5000`
+The backend will be available at `http://localhost:8080`
 
 ### 3. Frontend Setup
 
