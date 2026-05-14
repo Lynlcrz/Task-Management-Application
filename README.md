@@ -30,10 +30,10 @@
 
 Before you begin, ensure you have the following installed:
 
-- **Node.js** (v16 or higher) - [Download](https://nodejs.org/)
+- **Node.js** (v16 or higher)
 - **npm** (v7 or higher) - Comes with Node.js
-- **XAMPP** (with Apache, MySQL/MariaDB, phpMyAdmin) - [Download](https://www.apachefriends.org/)
-- **Git** - [Download](https://git-scm.com/)
+- **XAMPP** (with Apache, MySQL/MariaDB, phpMyAdmin) 
+- **Git** 
 
 ## Installation & Setup
 
@@ -53,13 +53,6 @@ cd backend
 npm install
 
 # Create a .env file in the backend directory
-# Add the following environment variables:
-# DB_HOST=localhost
-# DB_USER=root
-# DB_PASSWORD=
-# DB_NAME=task_management
-# PORT=5000
-# NODE_ENV=development
 
 # Start XAMPP (if not already running)
 # Windows: Run XAMPP Control Panel and click Start for Apache and MySQL
@@ -71,11 +64,9 @@ npm install
 
 # Start the backend server
 npm run dev
-# or
-npm start
 ```
 
-The backend will be available at `http://localhost:5000`
+The backend will be available at `http://localhost:8080`
 
 ### 3. Frontend Setup
 
