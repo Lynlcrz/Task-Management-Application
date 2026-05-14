@@ -2,19 +2,18 @@ import { Request, Response } from 'express';
 import pool from '../config/db';
 import { CreateTaskBody, UpdateTaskBody } from '../types/task-types';
 
-// ─── GET ALL TASKS (with search + filter) ────────────────────────────────────
+//  GET ALL TASKS
 export const getTasks = async (req: Request, res: Response): Promise<void> => {
   try {
-    // These come from the URL: /api/tasks?search=homework&status=active
     const { search, status } = req.query;
 
-    let query = 'SELECT * FROM tasks WHERE 1=1'; // 1=1 is a trick to make adding AND clauses easier
+    let query = 'SELECT * FROM tasks WHERE 1=1'; 
     const params: (string | number)[] = [];
 
-    // If the user searched for something, filter by title
+   
     if (search) {
       query += ' AND title LIKE ?';
-      params.push(`%${search}%`); // % means "anything before/after the search word"
+      params.push(`%${search}%`); 
     }
 
     // If the user filtered by status (active/completed)
@@ -23,7 +22,7 @@ export const getTasks = async (req: Request, res: Response): Promise<void> => {
       params.push(status as string);
     }
 
-    query += ' ORDER BY created_at DESC'; // newest tasks first
+    query += ' ORDER BY created_at DESC'; 
 
     const [rows] = await pool.execute(query, params);
     res.json(rows);
@@ -32,7 +31,7 @@ export const getTasks = async (req: Request, res: Response): Promise<void> => {
   }
 };
 
-// ─── CREATE TASK ──────────────────────────────────────────────────────────────
+//  CREATE TASK
 export const createTask = async (req: Request, res: Response): Promise<void> => {
   try {
     const { title, description }: CreateTaskBody = req.body;
@@ -53,13 +52,13 @@ export const createTask = async (req: Request, res: Response): Promise<void> => 
     const [rows] = await pool.execute('SELECT * FROM tasks WHERE id = ?', [insertId]);
     const tasks = rows as any[];
 
-    res.status(201).json(tasks[0]); // 201 = Created
+    res.status(201).json(tasks[0]); 
   } catch (error) {
     res.status(500).json({ message: 'Failed to create task' });
   }
 };
 
-// ─── UPDATE TASK ──────────────────────────────────────────────────────────────
+//  UPDATE TASK
 export const updateTask = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
@@ -113,7 +112,7 @@ export const updateTask = async (req: Request, res: Response): Promise<void> => 
   }
 };
 
-// ─── DELETE TASK ──────────────────────────────────────────────────────────────
+// DELETE TASK
 export const deleteTask = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;

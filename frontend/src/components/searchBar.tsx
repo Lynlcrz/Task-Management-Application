@@ -6,7 +6,8 @@ interface Props {
 }
 
 export default function SearchBar({ search, onSearch }: Props) {
-  return (
+  console.log('Rendering SearchBar with search:', search);
+  return ( 
     <div className="relative flex-1">
       <Search
         size={15}

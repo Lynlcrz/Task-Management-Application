@@ -4,9 +4,9 @@ import { createTask, deleteTask, getTasks, updateTask } from '../controllers/tas
 const router = Router();
 
 // Each line maps an HTTP method + URL → to a controller function
-router.get('/',         getTasks);    // GET    /api/tasks
-router.post('/',        createTask);  // POST   /api/tasks
-router.put('/:id',      updateTask);  // PUT    /api/tasks/1
-router.delete('/:id',   deleteTask);  // DELETE /api/tasks/1
+router.get('/',         getTasks);    // GET
+router.post('/',        createTask);  // POST
+router.put('/:id',      updateTask);  // PUT
+router.delete('/:id',   deleteTask);  // DELETE
 
 export default router;
