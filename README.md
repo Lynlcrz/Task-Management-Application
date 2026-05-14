@@ -30,10 +30,10 @@
 
 Before you begin, ensure you have the following installed:
 
-- **Node.js** (v16 or higher) - [Download](https://nodejs.org/)
+- **Node.js** (v16 or higher)
 - **npm** (v7 or higher) - Comes with Node.js
-- **XAMPP** (with Apache, MySQL/MariaDB, phpMyAdmin) - [Download](https://www.apachefriends.org/)
-- **Git** - [Download](https://git-scm.com/)
+- **XAMPP** (with Apache, MySQL/MariaDB, phpMyAdmin) 
+- **Git** 
 
 ## Installation & Setup
 
